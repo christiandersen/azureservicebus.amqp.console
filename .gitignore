@@ -3,3 +3,9 @@
 ################################################################################
 
 /.vs/slnx.sqlite
+/.vs/azureservicebus.amqp.console/config
+/bin/Debug/netcoreapp3.1
+/obj
+/.vs/azureservicebus.amqp.console/v16
+/.vs
+/appSettings - Kopi -backup.json

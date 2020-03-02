@@ -34,14 +34,12 @@ namespace azureservicebus.amqp.console
 
             // Give a name to the sender
             var senderSubscriptionId = "christiandersen.amqp.sender";
+            
             // Give a name to the receiver
             var receiverSubscriptionId = "christiandersen.amqp.receiver";
 
-            // Name of the topic you will be sending messages
-            var topic = "codeityourself";
-
-            // Name of the subscription you will receive messages from
-            var subscription = "codeityourself.listener";
+            // Name of the topic you will be sending messages (Name of the Queue)
+            var topic = "christiandersen";
 
             // Create the AMQP sender
             var sender = new SenderLink(amqpSession, senderSubscriptionId, topic);
@@ -63,7 +61,7 @@ namespace azureservicebus.amqp.console
             }
 
             // Create the AMQP consumer
-            var consumer = new ReceiverLink(amqpSession, receiverSubscriptionId, $"{topic}/Subscriptions/{subscription}");
+            var consumer = new ReceiverLink(amqpSession, receiverSubscriptionId, $"{topic}");
 
             // Start listening
 
