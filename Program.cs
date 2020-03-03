@@ -22,6 +22,9 @@ namespace azureservicebus.amqp.console
 
             // Azure service bus namespace
             var namespaceUrl = configuration["ServiceBus:NamespaceUrl"];
+            
+            // Azure service bus queue name
+            var queueName = configuration["ServiceBus:QueueName"];
 
             // Create the AMQP connection string
             var connectionString = $"amqps://{policyName}:{key}@{namespaceUrl}/";
@@ -38,8 +41,8 @@ namespace azureservicebus.amqp.console
             // Give a name to the receiver
             var receiverSubscriptionId = "christiandersen.amqp.receiver";
 
-            // Name of the topic you will be sending messages (Name of the Queue)
-            var topic = "christiandersen";
+            // Name of the topic you will be sending messages
+            var topic = queueName;
 
             // Create the AMQP sender
             var sender = new SenderLink(amqpSession, senderSubscriptionId, topic);
